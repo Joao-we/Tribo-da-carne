@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(151, 0, 0);
+    overflow: hidden;
+}
+
+/* Começo - Main */
+.voltar img {
+    height: 50px;
+    margin: 20px;
+}
+
+.voltar img:hover {
+    border: 2px solid white;
+}
+
+.geral {
+    width: 100vw;
+    height: 80vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background: white;
+    box-shadow: 1px 1px 12px red;
+    border-radius: 35px;
+    height: 500px;
+    width: 550px;
+}
+
+.cabecalho {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    gap: 0px 0px;
+}
+
+.cabecalho img {
+    width: 125px;
+    margin-bottom: 0;
+}
+
+.cabecalho h1 {
+    color: rgb(190, 0, 0);
+}
+
+.form {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.form label {
+    margin: 0px 0px 10px 0px;
+}
+
+.form .labEmail {
+    margin-top: 10px;
+}
+
+.form input {
+    margin: 0px 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.form input:focus {
+    border: 2px solid rgb(190, 0, 0);
+}
+
+.rodape {
+    display: grid;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.rodape #esqueceu-senha {
+    text-decoration: none;
+    margin: 10px 0px 15px 0px;
+    font-size: 17px;
+}
+
+.rodape #enviar {
+    width: 125px;
+    justify-self: center;
+    background-color: rgb(190, 0, 0);
+    border: none;
+    color: white;
+    padding: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
+    border-radius: 25px;
+    border: 1px solid rgb(190, 0, 0)
+}
+
+.rodape .cadastro {
+    margin: 15px 0px 0px 0px;
+}
+
+.rodape>.cadastro>a {
+    text-decoration: none;
+}
+
+.rodape #enviar:hover {
+    background-color: white;
+    color: rgb(190, 0, 0);
+    cursor: pointer;
+    font-weight: bolder;
+    border: 2px solid rgb(190, 0, 0);
+}
+
+
+/* Fim - Main */
+
+/* Responsividade */
+@media (max-width:580px) {
+    .formulario {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #email,
+    #senha {
+        grid-column: 1/-1;
+    }
+
+    .container {
+        width: 300px;
+    }
+
+    .cabecalho img {
+        width: 90px;
+    }
+
+    .cabecalho h1 {
+        font-size: 25px;
+    }
+}

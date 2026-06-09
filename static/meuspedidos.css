@@ -1,0 +1,72 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #111;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #1b1b1b;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid rgb(190, 0, 0);
+            box-shadow: 0 0 20px rgba(190, 0, 0, 0.3);
+        }
+
+        .check {
+            font-size: 80px;
+            color: rgb(190, 0, 0);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            color: rgb(190, 0, 0);
+        }
+
+        .pedido {
+            margin-top: 30px;
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .pedido p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .numero {
+            color: rgb(190, 0, 0);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: rgb(190, 0, 0);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: rgb(150, 0, 0);
+            transform: scale(1.05);
+        }

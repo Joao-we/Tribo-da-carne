@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', sans-serif
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* PRIMEIRA LINHA DO HEADER */
+.prin {
+    padding: 10px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    background-color: #f9f0df;
+    border-bottom: 2px solid rgb(190, 0, 0);
+}
+
+/* LOGO */
+.log {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 100px;
+    grid-column: 1/1;
+}
+
+/* INPUT DE PESQUISA */
+.pes {
+    display: grid;
+    grid-column: 3/7;
+}
+
+.pesq {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid red;
+    margin: 0 10px 0 10px;
+    background-image: url(./assets/lupa.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: right;
+
+}
+
+.pesq:focus {
+    border: 2px solid red;
+    background-image: none;
+
+}
+
+/* CARRINHO, MENU E PERFIL */
+.car {
+    display: flex;
+    justify-content: center;
+}
+
+.per {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.car img,
+.per img {
+    height: 50px;
+}
+
+.car img:hover,
+.per img:hover {
+    height: 65px;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: #010014;
+}
+.menu img {
+    height: 65px;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: #010014;
+}
+
+/* SEGUNDA LINHA DO HEADER */
+.secu {
+    display: flex;
+    font-size: 20px;
+    padding: 20px;
+    gap: 30px;
+    margin: 0 0 0 40px;
+}
+
+.btn-sair{
+    color: red;
+    background-color: #f9f0df;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-sair:hover{
+    color: white;
+    background-color: red
+}
+.secu a {
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+}
+
+.secu a:hover {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* PRINCIPAL DA TELA */
+main {
+    background-color: rgb(248, 248, 248);
+    height: auto;
+}
+
+.prilinha {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.textaço {
+    grid-column: 1/1;
+    font-size: 20px;
+    margin: 20px 0 0 20px;
+    text-align: justify;
+    align-content: center;
+    margin-right: 20px;
+}
+
+.aço, .web {
+    height: 400px;
+    min-height: 100px;
+    grid-column: 2/2;
+    margin: 20px 0 0 0px;
+    justify-self: center;
+}
+
+.seglinha {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.textmar {
+    grid-column: 2/2;
+    font-size: 20px;
+    margin: 20px 0 0 20px;
+    text-align: justify;
+    align-content: center;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+.mar {
+    height: 400px;
+    min-height: 100px;
+    grid-column: 1/1;
+    margin: 20px 0 0 0px;
+    justify-self: center;
+    margin-top: 50px;
+    grid-row: 1/1;
+}
+
+/* FOOTER */
+.foo {
+    background-color: red;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.spfoo {
+    animation: autoRun 17s linear infinite;
+    right: 100%;
+    position: absolute;
+    text-align: justify;
+    white-space: nowrap;
+    display: inline-block;
+    color: white;
+}
+
+@keyframes autoRun {
+    from {
+        right: 100%;
+    }
+
+    to {
+        right: -500px;
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    body{
+        overflow-x: hidden;
+    }
+    .textaço,
+    .textmar {
+        font-size: 15px;
+    }
+
+    .aço,
+    .mar,
+    .web {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+    .prin {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .log {
+        grid-column: 1/1;
+        display: flex;
+        justify-content: center;        
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    .menu {
+        grid-column: 4/4;
+    }
+
+    .car {
+        grid-column: 3/3;
+        grid-row: 1/1;
+    }
+
+    .per {
+        grid-column: 2/2;
+        grid-row: 1/1;
+    }
+
+    .car img,
+    .per img,
+    .menu img {
+        height: 40px;
+    }
+
+    .car img:hover,
+    .per img:hover,
+    .menu img:hover {
+        height: 50px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .pes {
+        grid-column: 1/-1;
+        grid-row: 2/2;
+    }
+
+    .pesq {
+        padding: 10px;
+        background-size: 30px;
+        font-size: 14px;
+    }
+
+    .secu {
+        font-size: 13px;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .secu a:hover {
+        font-size: 15px;
+    }
+
+    .textaço,
+    .textmar {
+        font-size: 12px;
+    }
+
+    .aço,
+    .mar,
+    .web {
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    body{
+        overflow-x: hidden;
+    }
+    .prilinha,
+    .seglinha {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .aço,
+    .mar,
+    .web {
+        grid-column: 1/1;
+        grid-row: 1/1;
+        width: 300px;
+        height: 100%;
+    }
+
+    .textmar,
+    .textaço {
+        grid-column: 1/1;
+        grid-row: 2/2;
+        margin-top: 20px;
+    }
+}

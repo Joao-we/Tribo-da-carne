@@ -1,0 +1,175 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Franklin Gothic Medium', sans-serif;
+    }
+
+    body {
+      background-color: rgb(248, 248, 248);
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #f9f0df;
+      border-bottom: 2px solid rgb(190, 0, 0);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: rgb(190, 0, 0);
+      font-size: 35px;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    section,
+    aside section {
+      background-color: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: rgb(190, 0, 0);
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 18px;
+    }
+
+    input,
+    select {
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgb(190, 0, 0);
+      outline: none;
+      font-size: 16px;
+    }
+
+    input:focus,
+    select:focus {
+      border: 2px solid red;
+    }
+
+    .linha {
+      display: flex;
+      gap: 20px;
+    }
+
+    .linha article {
+      width: 100%;
+    }
+
+    button {
+      padding: 15px;
+      border: 1px solid rgb(190, 0, 0);
+      border-radius: 10px;
+      background-color: white;
+      color: rgb(190, 0, 0);
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: rgb(190, 0, 0);
+      color: white;
+      transform: scale(1.03);
+    }
+
+    .produto {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+      font-size: 18px;
+    }
+
+    #totalCompra {
+      margin-top: 20px;
+      color: rgb(190, 0, 0);
+      font-size: 30px;
+    }
+
+    footer {
+      background-color: red;
+      padding: 30px;
+      margin-top: 30px;
+      overflow: hidden;
+      position: relative;
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    footer p {
+      animation: autoRun 17s linear infinite;
+      right: 100%;
+      position: absolute;
+      white-space: nowrap;
+      display: inline-block;
+      color: white;
+      font-size: 20px;
+    }
+
+    @keyframes autoRun {
+      from {
+        right: 100%;
+      }
+
+      to {
+        right: -500px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 20px;
+      }
+
+      .linha {
+        flex-direction: column;
+      }
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .produto {
+        font-size: 15px;
+      }
+    }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/carrinho.css">
+    <title>tribo</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- primeira linha do header -->
+        <nav class="prin">
+            <section class="log">
+                <img src="/static/assets/logo.png" alt="" class="logo">
+            </section>
+            <section class="menu">
+                <a href="./index.html"><img src="/static/assets/menu.png" alt=""></a>
+            </section>
+            <section class="pes">
+                <input type="text" placeholder="Pesquisar" class="pesq">
+            </section>
+            <section class="per">
+                <a href="./login.html"><img src="/static/assets/perfil.png" alt=""></a>
+            </section>
+            <section class="car">
+                <a href="./Carrinho.html">
+                    <p class="quantidade-carrinho" id="quantidade-carrinho"
+                        style="color: white;background-color: red;width: 30px;text-align: center;text-decoration: none;border-radius: 5px;margin-bottom: 4px;">
+                        0</p>
+                    <img src="/static/assets/carrinho.png" alt="">
+                </a>
+            </section>
+        </nav>
+        <!-- segunda linha linha do header -->
+        <nav>
+            <section class="secu">
+                <a href="./bovino.html">Bovino</a>
+                <a href="./suino.html">Suino</a>
+                <a href="./frango.html">Frango</a>
+                <a href="./empanados.html">Empanados</a>
+                <a href="./variados.html">Variados</a>
+            </section>
+            <hr class="linha">
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- <h1 class="carinhoComCompra">Carrinho</h1> -->
+        <section class="carrinhoVazio" id="carrinhoVazio">
+        </section>
+        <section class="principal">
+            <section class="cards" id="cards">
+
+            </section>
+            <section class="total-compras" id="total-compras">
+                <fieldset class="fim-compra">
+                    <legend>Preço final</legend>
+                    <section class="precos"> 
+                        <h2 style="font-size: 24px;">Nome</h2>
+                        <h2 style="font-size: 24px;">Valor</h2>
+                        <h2 style="font-size: 24px;">Quantidade</h2>
+                    </section>
+                    <section id="precos"></section>
+
+                </fieldset>
+                <a href="./pagamento.html" id="compra">Finalizar Compra</a>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <section class="foo">
+            <span class="spfoo">&copy; 2026 Direitos reservados a Tribo da Carne </span>
+        </section>
+    </footer>
+    <script src="/static/carrinho.js"></script>
+</body>
+
+</html>

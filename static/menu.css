@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* PRIMEIRA LINHA DO HEADER */
+header{
+    font-family: 'Franklin Gothic Medium', sans-serif;
+}
+.prin {
+    background-color: #010014;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+/* LOGO */
+.log {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 100px;
+    grid-column: 1/1;
+}
+
+/* INPUT DE PESQUISA */
+.pes {
+    display: grid;
+    grid-column: 3/7;
+}
+
+.pesq {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid red;
+    margin: 0 10px 0 10px;
+    background-image: url(/assets/lupa.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: right;
+
+}
+
+.pesq:focus {
+    border: 2px solid red;
+    background-image: none;
+
+}
+
+/* CARRINHO, MENU E PERFIL */
+.op {
+    gap: 50px;
+    margin: 0 20px 0 0;
+    grid-column: 8/9;
+}
+
+.car {
+    display: flex;
+    justify-content: center;
+}
+
+.per {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.car img,
+.per img,
+.menu img {
+    height: 50px;
+}
+
+.car img:hover,
+.per img:hover,
+.menu img:hover {
+    height: 65px;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: #010014;
+}
+
+/* SEGUNDA LINHA DO HEADER */
+.secu {
+    display: flex;
+    font-size: 20px;
+    padding: 20px;
+    gap: 30px;
+    margin: 0 0 0 40px;
+}
+
+.secu a {
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+}
+
+.secu a:hover {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+}
+/* Fim Header */
+
+
+/* Começo - Main */
+
+body{
+    background-color: rgb(232, 232, 232)
+}
+main>*{
+    font-family: "Josefin Sans", sans-serif;
+}
+
+main{
+    background-color: rgb(232, 232, 232);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+}
+
+.principal{
+    border-radius: 15px;
+    margin: 30px 0px 30px 0px;
+    background-color: white;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    width: 550px;
+    text-align: center;
+    box-shadow: 4px 4px 25px;
+    /* border: 1px solid black; */
+}
+.principal h1{
+    font-size: 25px;
+    margin-top: 20px;
+}
+.produto{
+    /* border: 1px solid salmon; */
+    width: 200px;
+    margin-top: 15px;
+}
+.valor{
+    margin: 30px 0px 20px 0;
+    color: rgb(190, 0, 0);
+}
+#embalo{
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16px;
+    border: 2px solid lightgray;
+    padding: 15px;
+    border-radius: 15px;
+    color: rgb(165, 165, 165);
+    margin-bottom: 20px;
+}
+.controle-quantidade{
+    background-color: #be0000;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 0 20% 0 20%;
+}
+.quantidade{
+    border: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.quantidade:hover{
+    cursor: pointer;
+    border: 1px solid white;
+}
+#quantidade{
+    text-align: center;
+    border: none;
+    background: none;
+    color: white;
+    outline: none;
+    font-family: "Josefin Sans", sans-serif;
+}
+.sobre h3{
+    font-size: 19px;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+}
+.texto{
+    text-align: left;
+    margin: 20px;
+}
+
+/* Fim - Main */
+.foo {
+    background-color: red;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.spfoo {
+    animation: autoRun 17s linear infinite;
+    right: 100%;
+    position: absolute;
+    text-align: justify;
+    white-space: nowrap;
+    display: inline-block;
+    color: white;
+}
+
+@keyframes autoRun {
+    from {
+        right: 100%;
+    }
+
+    to {
+        right: -300px;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+        .prin {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .log {
+        grid-column: 1/1;
+  display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    .menu {
+        grid-column: 4/4;
+    }
+
+    .car {
+        grid-column: 3/3;
+        grid-row: 1/1;
+    }
+
+    .per {
+        grid-column: 2/2;
+        grid-row: 1/1;
+    }
+
+    .car img,
+    .per img,
+    .menu img {
+        height: 40px;
+    }
+
+    .car img:hover,
+    .per img:hover,
+    .menu img:hover {
+        height: 50px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .pes {
+        grid-column: 1/-1;
+        grid-row: 2/2;
+    }
+
+    .pesq {
+        padding: 10px;
+        background-size: 30px;
+        font-size: 14px;
+    }
+
+    .secu {
+        font-size: 13px;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .secu a:hover {
+        font-size: 15px;
+    }
+}
+@media (max-width: 560px){
+    main{
+        margin: 10px;
+    }
+}

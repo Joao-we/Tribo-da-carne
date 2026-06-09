@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bovino.css">
+    <title>Mengo</title>
+</head>
+
+<body data-categoria="variado">
+
+    <header>
+        <!-- primeira linha do header -->
+        <nav class="prin">
+            <section class="log">
+                <img src="/static/assets/logo.png" alt="" class="logo">
+            </section>
+            <section class="menu">
+                <a href="./index.html"><img src="/static/assets/menu.png" alt=""></a>
+            </section>
+            <section class="pes">
+                <input type="text" placeholder="Pesquisar" class="pesq">
+            </section>
+            <section class="per">
+                <a href="./login.html"><img src="/static/assets/perfil.png" alt=""></a>
+            </section>
+            <section class="car">
+                <a href="./Carrinho.html">
+                    <p class="quantidade-carrinho" id="quantidade-carrinho"
+                        style="color: white;background-color: red;width: 30px;text-align: center;text-decoration: none;border-radius: 5px;margin-bottom: 4px;">
+                        0</p>
+                    <img src="/static/assets/carrinho.png" alt="">
+                </a>
+            </section>
+        </nav>
+        <!-- segunda linha linha do header -->
+        <nav>
+            <section class="secu">
+                <a href="./bovino.html" class="nSele">Bovino</a>
+                <a href="./suino.html" class="nSele">Suino</a>
+                <a href="./frango.html" class="nSele">Frango</a>
+                <a href="./empanados.html" class="nSele">Empanados</a>
+                <a href="#" class="sele">Variados</a>
+            </section>
+            <hr class="linha">
+        </nav>
+    </header>
+
+    <main>
+        <section id="grid-produtos">
+        </section>
+        <section class="popup" id="popup">
+            <section class="conteudo-popup">
+                <span id="fechar-popup">X</span>
+                <h2>Novo Produto</h2>
+                <input type="text" id="nome" placeholder="Nome">
+                <select id="categoria" placeholder="Categoria">
+                    <option value="">Selecione a categoria</option>
+                    <option value="bovino">Bovino</option>
+                    <option value="suino">Suino</option>
+                    <option value="frango">Frango</option>
+                    <option value="empanados">Empanados</option>
+                    <option value="variados">Variados</option>
+                    <input type="file" id="imagem" accept="image/*" />
+                    <textarea id="descricao" placeholder="Descrição"></textarea>
+                    <div class="popup-buttons">
+                        <button id="salvar-produto">Salvar</button>
+                        <button id="cancelar-popup">Cancelar</button>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <section class="foo">
+            <span class="spfoo">&copy; 2026 Direitos reservados a Tribo da Carne </span>
+        </section>
+    </footer>
+    <script src="/static/produtos.js"></script>
+    <script src="/static/main.js"></script>
+</body>
+
+</html>

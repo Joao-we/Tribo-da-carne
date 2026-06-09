@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/cadasto.css">
+    <title>Mengo</title>
+</head>
+
+<body>
+
+    <main>
+
+        <section class="geral">
+            <section class="container">
+                <section class="cabecalho">
+                    <img src="/static/assets/logo.png">
+                    <h1>Cadastro</h1>
+                </section>
+                <form class="formulario">
+                    <section class="form">
+                        <label class="labNome">Nome<span class="obrigatorio">*</span></label>
+                        <input id="nome" type="text" placeholder="Nome" required>
+                    </section>
+                    <section class="form">
+                        <label>Endereço<span class="obrigatorio">*</span></label>
+                        <input id="endereco" type="text" placeholder="Seu endereço" required>
+                    </section>
+                    <section class="form">
+                        <label>E-mail<span class="obrigatorio">*</span></label>
+                        <input id="email" type="email" placeholder="email" required>
+                    </section>
+                    <section class="form">
+                        <label class="labEmail">Senha<span class="obrigatorio">*</span></label>
+                        <input id="senha" type="password" placeholder="Senha" required>
+                    </section>
+                    <section class="rodape">
+                        <button id="enviar" type="submit">Cadastrar</button>
+                    </section>
+                </form>
+
+            </section>
+        </section>
+
+
+    </main>
+    <script src="/static/mascara.js"></script>
+    <script src="/static/cadastro.js"></script>
+</body>
+
+</html>

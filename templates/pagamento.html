@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="/static/pagamentos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Finalização de Compra</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Pagamento</h2>
+            <form id="formPagamento">
+                <article>
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Digite seu nome" required>
+                </article>
+                <article>
+                    <label>Email</label>
+                    <input type="email" placeholder="Digite seu email" required>
+                </article>
+                <article>
+                    <label>Endereço</label>
+                    <input type="text" placeholder="Digite seu endereço" required>
+                </article>
+                <section class="linha">
+                    <article>
+                        <label>Número do Cartão</label>
+                        <input type="text" id="cartao" placeholder="0000 0000 0000 0000" required>
+                    </article>
+                    <article>
+                        <label>CVV</label>
+                        <input type="text" maxlength="3" placeholder="123" required>
+                    </article>
+                </section>
+                <section class="linha">
+                    <article>
+                        <label>Validade</label>
+                        <input type="month" required>
+                    </article>
+                    <article>
+                        <label>Parcelamento</label>
+                        <select>
+                            <option>1x sem juros</option>
+                            <option>2x sem juros</option>
+                            <option>3x sem juros</option>
+                            <option>4x sem juros</option>
+                        </select>
+                    </article>
+                </section>
+                <button type="submit" onclick="finalizarCompra()">Finalizar Pagamento</button>
+            </form>
+        </section>
+        <aside>
+            <section>
+                <h2>Resumo do Pedido</h2>
+                <div id="listaProdutos"></div>
+                <h2 id="totalCompra">Total: R$0.00</h2>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2026 Direitos reservados a Tribo da Carne</p>
+    </footer>
+    <script src="/static/mascara.js"></script>
+    <script src="/static/pagmentos.js"></script>
+</body>
+
+</html>

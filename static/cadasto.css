@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Fim Header */
+
+
+/* Começo - Main */
+
+body{
+    background-color: rgb(151, 0, 0) ;
+    
+}
+
+.geral{
+    width: 100%;
+    height: 97vh;
+    background-color: rgb(151, 0, 0);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+.formulario{
+    margin-bottom: -45px;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background: white;
+    box-shadow: 1px 1px 12px red;
+    border-radius: 35px;
+    height: 655px;
+    width: 550px;
+}
+.cabecalho{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid black; */
+    gap: 0px 0px;
+}
+.cabecalho img{
+    width: 125px;
+    margin-bottom: 0;
+    justify-self: center;
+    /* border: 1px solid black; */
+}
+.cabecalho h1{
+    /* border: 1px solid black; */
+    margin-top: 0;
+    color: rgb(190, 0, 0);
+}
+.form{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.obrigatorio{
+    color: rgb(190, 0, 0);
+}
+.form label{
+    margin: 10px 0px 5px 0px;
+}
+.form .labNome{
+    margin-top: 20px;
+}
+.form input{
+    margin: 0px 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+.rodape{
+    display: grid;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rodape #enviar{
+    height: 45px;
+    width: 125px;
+    justify-self: center;
+    background-color: rgb(190, 0, 0);
+    border: none;
+    color: white;
+    padding: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
+    border-radius: 25px;
+    border: 1px solid rgb(190, 0, 0);
+}
+
+.rodape #enviar:hover{
+    background-color: white;
+    color: rgb(190, 0, 0);
+    cursor: pointer;
+}
+
+
+/* Fim - Main */
+
+/* Responsividade */
+@media (max-width:580px){
+    .geral{
+        justify-content: center;
+        align-items: start;
+    }
+    .formulario{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        width: 300px;
+    }
+    #email, #senha{
+        grid-column: 1/-1;
+    }
+    .container{
+        width: 300px;
+        height: 90%;
+        margin: 30px 0px 0px 0px;
+    }
+    .form input{
+        padding: 5px;
+    }
+    .cabecalho img{
+        width: 90px;
+    }
+    .cabecalho h1{
+        font-size: 25px;
+    }
+    .rodape #enviar{
+        margin: 45px 0px 0px 0px;
+    }
+}
+@media (max-width:420px){
+   
+}
