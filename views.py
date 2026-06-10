@@ -6,7 +6,7 @@ from flask import render_template, jsonify, request
 import sqlite3
  
 # ROTAS DAS TELAS
-@app.route("/index.html")
+@app.route("/")
 def inicio():
     return render_template("index.html")
  
