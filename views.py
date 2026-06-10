@@ -9,10 +9,7 @@ import sqlite3
 @app.route("/")
 def inicio():
     return render_template("index.html")
-@app.route("/index.html")
-def home():
-    return render_template("index.html")
- 
+    
 @app.route("/bovino.html")
 def bovino():
     return render_template("bovino.html")
