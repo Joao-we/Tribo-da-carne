@@ -22,7 +22,7 @@ btn.addEventListener("click", async (event) => {
         if (dados.sucesso) {
             localStorage.setItem("usuario", JSON.stringify(dados.usuario))
             alert("Bem-vindo, " + dados.usuario.nome + "!")
-            window.location.href = "/index.html"
+            window.location.href = "/"
         } else {
             alert(dados.mensagem)
             btn.disabled = false
@@ -32,7 +32,7 @@ btn.addEventListener("click", async (event) => {
             localStorage.setItem("usuario", JSON.stringify(dados.usuario))
             localStorage.setItem("logado", "true")
             alert("Bem-vindo, " + dados.usuario.nome + "!")
-            window.location.href = "/index.html"
+            window.location.href = "/"
         } else {
             alert(dados.mensagem)
             btn.disabled = false
