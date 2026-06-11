@@ -30,7 +30,7 @@ def empanados():
 def variados():
     return render_template("variados.html")
  
-@app.route("/Carrinho.html")
+@app.route("/carrinho.html")
 def carrinho():
     return render_template("carrinho.html")
  
