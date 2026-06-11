@@ -32,7 +32,7 @@ def variados():
  
 @app.route("/carrinho.html")
 def carrinho():
-    return render_template("carrinho.html")
+    return render_template("Carrinho.html")
  
 @app.route("/login.html")
 def login():
