@@ -16,7 +16,6 @@ cursor.execute(
     """
 )
 
-# CORRIGIDO: adicionada vírgula que faltava antes de "adm INTEGER"
 cursor.execute("""
         CREATE TABLE IF NOT EXISTS usuarios(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
