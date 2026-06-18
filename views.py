@@ -4,6 +4,8 @@ import os
 import hashlib
 from flask import render_template, jsonify, request
 import sqlite3
+from datetime import datetime
+import ml_vendas
  
 # ROTAS DAS TELAS
 @app.route("/")
@@ -49,6 +51,10 @@ def meus_pedidos():
 @app.route("/cadastro.html")
 def cadastro():
     return render_template("cadastro.html")
+
+@app.route("/vendas.html")
+def vendas():
+    return render_template("vendas.html")
  
 # FINAL DAS ROTAS DAS TELAS
  
@@ -191,6 +197,8 @@ def aprovar_pagamento():
         "status": "Aprovado",
         "mensagem": "Pagamento aprovado com sucesso!"
     })
+
+# CRIAR PEDIDO (grava a venda no banco - e o que alimenta o relatorio e a ML)
 @app.route("/api/pedidos/criar", methods=["POST"])
 def criar_pedido():
     dados = request.get_json()
@@ -293,4 +301,4 @@ def api_vendas_previsao():
 
     resultado = ml_vendas.prever_vendas(dias_futuros=dias)
     resultado["sucesso"] = True
-    return jsonify(resultado) 
+    return jsonify(resultado)
