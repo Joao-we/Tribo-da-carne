@@ -191,3 +191,106 @@ def aprovar_pagamento():
         "status": "Aprovado",
         "mensagem": "Pagamento aprovado com sucesso!"
     })
+@app.route("/api/pedidos/criar", methods=["POST"])
+def criar_pedido():
+    dados = request.get_json()
+    email = (dados.get("email") or "visitante").strip().lower()
+    itens = dados.get("itens", [])
+
+    if not itens:
+        return jsonify({"sucesso": False, "mensagem": "Carrinho vazio"}), 400
+
+    conexao = sqlite3.connect("produtos.db")
+    cursor = conexao.cursor()
+
+    total_pedido = 0
+    itens_validados = []
+
+    for item in itens:
+        produto_id = item.get("id")
+        quantidade = int(item.get("quantidade", 0))
+        if quantidade <= 0:
+            continue
+        cursor.execute("SELECT nome, preco, categoria FROM produtos WHERE id = ?", (produto_id,))
+        produto = cursor.fetchone()
+        if not produto:
+            continue
+        nome, preco, categoria = produto
+        subtotal = round(preco * quantidade, 2)
+        total_pedido += subtotal
+        itens_validados.append((produto_id, nome, categoria, quantidade, preco, subtotal))
+
+    if not itens_validados:
+        conexao.close()
+        return jsonify({"sucesso": False, "mensagem": "Nenhum item valido no carrinho"}), 400
+
+    data_pedido = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    cursor.execute(
+        "INSERT INTO pedidos (email_usuario, data, total, origem) VALUES (?, ?, ?, 'real')",
+        (email, data_pedido, round(total_pedido, 2))
+    )
+    pedido_id = cursor.lastrowid
+
+    for produto_id, nome, categoria, quantidade, preco, subtotal in itens_validados:
+        cursor.execute(
+            """INSERT INTO itens_pedido
+               (pedido_id, produto_id, nome_produto, categoria, quantidade, preco_unitario, subtotal)
+               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+            (pedido_id, produto_id, nome, categoria, quantidade, preco, subtotal)
+        )
+
+    conexao.commit()
+    conexao.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Pedido registrado com sucesso!",
+        "pedido_id": pedido_id,
+        "total": round(total_pedido, 2)
+    }), 201
+
+# RESUMO DE VENDAS (calculo direto - quanto ja foi vendido)
+@app.route("/api/vendas/resumo")
+def api_vendas_resumo():
+    email_adm = request.args.get("email_adm", "").strip().lower()
+
+    conexao = sqlite3.connect("produtos.db")
+    cursor = conexao.cursor()
+    cursor.execute("SELECT adm FROM usuarios WHERE email = ?", (email_adm,))
+    usuario = cursor.fetchone()
+    conexao.close()
+
+    if not usuario or usuario[0] != 1:
+        return jsonify({"sucesso": False, "erro": "Sem permissao"}), 403
+
+    resumo_geral = ml_vendas.calcular_total_vendido()
+    resumo_real = ml_vendas.calcular_total_vendido(origem="real")
+    resumo_demo = ml_vendas.calcular_total_vendido(origem="demo")
+    por_categoria = ml_vendas.vendas_por_categoria()
+
+    return jsonify({
+        "sucesso": True,
+        "geral": resumo_geral,
+        "real": resumo_real,
+        "demo": resumo_demo,
+        "por_categoria": por_categoria
+    })
+
+# PREVISAO DE VENDAS (Machine Learning - Regressao Linear)
+@app.route("/api/vendas/previsao")
+def api_vendas_previsao():
+    email_adm = request.args.get("email_adm", "").strip().lower()
+    dias = int(request.args.get("dias", 7))
+
+    conexao = sqlite3.connect("produtos.db")
+    cursor = conexao.cursor()
+    cursor.execute("SELECT adm FROM usuarios WHERE email = ?", (email_adm,))
+    usuario = cursor.fetchone()
+    conexao.close()
+
+    if not usuario or usuario[0] != 1:
+        return jsonify({"sucesso": False, "erro": "Sem permissao"}), 403
+
+    resultado = ml_vendas.prever_vendas(dias_futuros=dias)
+    resultado["sucesso"] = True
+    return jsonify(resultado) 

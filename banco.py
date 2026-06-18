@@ -26,6 +26,29 @@ cursor.execute("""
         adm INTEGER DEFAULT 0
         )
     """)
+cursor.execute("""
+        CREATE TABLE IF NOT EXISTS pedidos(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        email_usuario TEXT,
+        data TEXT,
+        total REAL,
+        origem TEXT DEFAULT 'real'
+        )
+""")
+
+cursor.execute("""
+        CREATE TABLE IF NOT EXISTS itens_pedido(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        pedido_id INTEGER,
+        produto_id INTEGER,
+        nome_produto TEXT,
+        categoria TEXT,
+        quantidade INTEGER,
+        preco_unitario REAL,
+        subtotal REAL,
+        FOREIGN KEY(pedido_id) REFERENCES pedidos(id)
+        )
+        """)
 
 cursor.execute("DELETE FROM sqlite_sequence WHERE name='produtos'")
 cursor.execute("DELETE FROM produtos")

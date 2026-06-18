@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/vendas.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+    <title>Painel de Vendas</title>
+</head>
+
+<body>
+    <header class="topo">
+        <a href="/" class="voltar">&larr; Voltar para o site</a>
+        <h1>Painel de Vendas</h1>
+        <p class="subtitulo">Total vendido e previsão de vendas (Machine Learning)</p>
+    </header>
+
+    <main id="conteudo">
+        <section id="bloqueado" class="bloqueado" style="display:none;">
+            <p>Esta página é restrita a administradores.</p>
+            <a href="login.html">Fazer login</a>
+        </section>
+
+        <section id="painel" class="painel">
+            <section class="cartoes" id="cartoes">
+                <article class="cartao">
+                    <span class="rotulo">Total já vendido</span>
+                    <span class="valor" id="totalVendido">R$ 0,00</span>
+                    <span class="detalhe" id="qtdPedidos">0 pedidos</span>
+                </article>
+                <article class="cartao">
+                    <span class="rotulo">Previsto p/ próximos 7 dias</span>
+                    <span class="valor" id="totalPrevisto">R$ 0,00</span>
+                    <span class="detalhe" id="tendencia">tendência: --</span>
+                </article>
+                <article class="cartao">
+                    <span class="rotulo">Confiabilidade do modelo (R²)</span>
+                    <span class="valor" id="confiabilidade">--</span>
+                    <span class="detalhe">quanto mais perto de 1, melhor</span>
+                </article>
+            </section>
+
+            <section class="bloco">
+                <h2>Histórico de vendas + Previsão (Regressão Linear)</h2>
+                <canvas id="graficoPrevisao" height="100"></canvas>
+                <p class="aviso" id="avisoML"></p>
+            </section>
+
+            <section class="bloco">
+                <h2>Vendas por categoria</h2>
+                <canvas id="graficoCategoria" height="100"></canvas>
+            </section>
+
+            <section class="bloco">
+                <h2>Origem dos dados</h2>
+                <p id="origemDados">Carregando...</p>
+            </section>
+        </section>
+    </main>
+
+    <script src="/static/vendas.js"></script>
+</body>
+
+</html>
