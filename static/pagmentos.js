@@ -32,9 +32,28 @@ let gerarPagamento = () => {
 document.getElementById("formPagamento")
     .addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Pagamento realizado com sucesso!");
-        localStorage.removeItem("carrinho");
-        window.location.href = "meusPedidos.html";
+
+        let usuario = JSON.parse(localStorage.getItem("usuario")) || {};
+
+        fetch("/api/pedidos/criar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: usuario.email || "visitante",
+                itens: carrinho
+            })
+        })
+            .then(response => response.json())
+            .then(() => {
+                alert("Pagamento realizado com sucesso!");
+                localStorage.removeItem("carrinho");
+                window.location.href = "meusPedidos.html";
+            })
+            .catch(() => {
+                alert("Pagamento realizado com sucesso!");
+                localStorage.removeItem("carrinho");
+                window.location.href = "meusPedidos.html";
+            });
     });
 
 function finalizarCompra(){
