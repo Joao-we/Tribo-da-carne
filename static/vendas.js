@@ -5,9 +5,9 @@ function formatarReal(valor) {
 }
 
 if (!usuario || usuario.adm !== 1) {
-    document.getElementById("painel").style.display = "none";
     document.getElementById("bloqueado").style.display = "block";
 } else {
+    document.getElementById("painel").style.display = "block";
     carregarResumo();
     carregarPrevisao();
 }
