@@ -1,42 +1,6 @@
 let tel = document.getElementById("numero")
 let cartao = document.getElementById("cartao")
 
-
-if(cep){
-cep.addEventListener("input", () => {
-    let texto = cep.value
-    texto = texto.replace(/[^0-9]/g, "")
-    texto = texto.slice(0, 8)
-    let parte1 = texto.slice(0, 5)
-    let parte2 = texto.slice(5, 8)
-    if (texto.length > 5) {
-        texto = `${parte1}-${parte2}`
-    }
-    cep.value = texto
-})
-}
-
-if (cpf){cpf.addEventListener("input", () => {
-    let texto = cpf.value
-    texto = texto.replace(/[^0-9]/g, "")
-    texto = texto.slice(0, 11)
-    let parte1 = texto.slice(0, 3)
-    let parte2 = texto.slice(3, 6)
-    let parte3 = texto.slice(6, 9)
-    let parte4 = texto.slice(9, 11)
-    let numero = texto
-    if (texto.length > 3) {
-        numero = `${parte1}.${parte2}`
-    }
-    if (texto.length > 6) {
-        numero = `${parte1}.${parte2}.${parte3}`
-    }
-    if (texto.length > 9) {
-        numero = `${parte1}.${parte2}.${parte3}-${parte4}`
-    }
-    cpf.value = numero
-})}
-
 if(tel){
 numero.addEventListener("input", () =>{
     let macaraTelefone = tel.value
@@ -56,7 +20,7 @@ numero.addEventListener("input", () =>{
 })}
 
 if(cartao){
-cartao.addEventListener("input", () =>{
+cartao.addEventListener("input" , () =>{
     let mascaraCartao = cartao.value
     mascaraCartao = mascaraCartao.replace(/[^0-9]/g, "")
     mascaraCartao = mascaraCartao.slice(0, 16)
